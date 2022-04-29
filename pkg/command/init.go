@@ -24,6 +24,7 @@ func InitAction(c *cli.Context) error {
 	}
 
 	l.Topics[topicName] = make([]godo.Item, 0)
+	l.CurrentTopic = topicName
 
 	return godo.Save(c, l)
 }
