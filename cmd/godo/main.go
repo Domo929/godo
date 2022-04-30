@@ -27,6 +27,11 @@ func main() {
 				Usage:  "create a new godo list with the given topic",
 				Action: command.InitAction,
 			},
+			{
+				Name:   "switch",
+				Usage:  "switch the current active godo list. Must be an already existing list",
+				Action: command.SwitchAction,
+			},
 		},
 
 		Action: func(c *cli.Context) error {

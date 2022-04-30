@@ -7,15 +7,15 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-func InitAction(c *cli.Context) error {
+func SwitchAction(c *cli.Context) error {
 	l, err := godo.Load(c)
 	if err != nil {
 		return fmt.Errorf("loading: %w", err)
 	}
 
-	topicName := c.Args().First()
+	newTopicName := c.Args().First()
 
-	if err := l.AddTopic(topicName); err != nil {
+	if err := l.SwitchTopic(newTopicName); err != nil {
 		return err
 	}
 
